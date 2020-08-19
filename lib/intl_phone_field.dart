@@ -104,7 +104,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                     setState(() {
                       filteredCountries = countries
                           .where((country) =>
-                              country['name'].toLowerCase().contains(value.toLowerCase()))
+                              country['name'].toLowerCase().contains(value))
                           .toList();
                     });
                   },
@@ -175,6 +175,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                 widget.onSaved(
                   PhoneNumber(
                     countryISOCode: _selectedCountry['code'],
+                    countryName: _selectedCountry['name'],
                     countryCode: _selectedCountry['dial_code'],
                     number: value,
                   ),
@@ -186,6 +187,7 @@ class _IntlPhoneFieldState extends State<IntlPhoneField> {
                   PhoneNumber(
                     countryISOCode: _selectedCountry['code'],
                     countryCode: _selectedCountry['dial_code'],
+                    countryName : _selectedCountry['name'],
                     number: value,
                   ),
                 );
